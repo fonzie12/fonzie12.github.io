@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AstroFal</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/config.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Yapay zeka destekli kahve falı</p>
+          <h1>AstroFal</h1>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel form-panel">
+          <h2>Fal bilgileri</h2>
+          <form id="fortune-form" enctype="multipart/form-data">
+            <div class="mode-picker" role="group" aria-label="Fal türü seçimi">
+              <button type="button" class="mode-button is-active" data-mode="both">İkisini birlikte</button>
+              <button type="button" class="mode-button" data-mode="birth">Sadece burç</button>
+              <button type="button" class="mode-button" data-mode="cup">Sadece kahve falı</button>
+            </div>
+
+            <div class="segment mode-section" data-section="birth">
+              <h3>Burç ve yıldız haritası</h3>
+              <p class="segment-note">Sadece burç falı için bu bölümünü doldurabilirsiniz; fincan fotoğrafı yüklemenize gerek yok.</p>
+
+              <label>
+                Ad soyad
+                <input type="text" name="name" placeholder="Örnek: Elif Yılmaz" />
+              </label>
+
+              <label>
+                Doğum tarihi
+                <input type="date" name="birth_date" />
+              </label>
+
+              <label>
+                Doğum saati
+                <input type="time" name="birth_time" placeholder="12:00" />
+              </label>
+
+              <label>
+                Doğum yeri
+                <input type="text" name="city" placeholder="İstanbul" />
+              </label>
+            </div>
+
+            <div class="segment mode-section" data-section="cup">
+              <h3>Kahve fincanı falı</h3>
+              <p class="segment-note">Yalnızca kahve falı bakmak istiyorsan isim ve doğum bilgilerini doldurmana gerek yok.</p>
+
+              <label>
+                Kahve fincanı fotoğrafı
+                <input type="file" name="file" accept="image/*" />
+              </label>
+            </div>
+
+            <label>
+              Yorum tonu
+              <select name="tone">
+                <option value="warm">Sıcak ve samimi</option>
+                <option value="friendly">Gün arkadaşı</option>
+                <option value="mystic">Falcı gibi mistik</option>
+              </select>
+            </label>
+
+            <button type="submit" id="submit-button">İkisini birlikte yorumla</button>
+          </form>
+        </section>
+
+        <section class="panel result-panel">
+          <h2>Sonuç</h2>
+          <div id="loading" class="hidden">Fal yorumu hazırlanıyor...</div>
+          <div id="result"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

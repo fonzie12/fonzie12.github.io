@@ -1,0 +1,1 @@
+window.ASTROFAL_API_URL = '';

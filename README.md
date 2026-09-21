@@ -17,7 +17,21 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-Açık adres: http://localhost:8000/docs
+Açık adres: http://localhost:8000
+
+## GitHub Pages ve üretim
+
+Frontend için hedef adres: `https://fonzie12.github.io`.
+
+GitHub Pages yalnızca statik frontend çalıştırdığı için FastAPI backend'i ayrı bir serviste yayınlayın. Bu proje için hazır `render.yaml` dosyası Render üzerinde backend oluşturur.
+
+1. Projeyi `fonzie12.github.io` repository'sine gönderin.
+2. Repository Settings > Pages bölümünde kaynak olarak GitHub Actions seçin.
+3. Render'da bu repository'yi bağlayıp `render.yaml` servisini deploy edin.
+4. GitHub repository Variables bölümüne `ASTROFAL_API_URL` adıyla Render backend adresini ekleyin.
+5. Yeni push sonrasında frontend `https://fonzie12.github.io` adresinde backend'e bağlanır.
+
+API adresi yerelde boş bırakıldığında frontend `http://localhost:8000/api/fortune` adresini kullanır.
 
 ## Ortam değişkenleri
 Bir `.env` dosyası oluşturup şu bilgileri ekleyin:

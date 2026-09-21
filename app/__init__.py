@@ -1,0 +1,1 @@
+"""AstroFal application package."""
